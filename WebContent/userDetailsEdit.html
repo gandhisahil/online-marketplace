@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SPT MarketPlace - Edit Details</title>
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
+	<link rel="stylesheet"
+		href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic">
+	<link rel="stylesheet" href="assets/css/styles.css">
+	<link rel="stylesheet" href="assets/css/myStyles.css">
+</head>
+<body>
+    <div id="in-nav" style="height:80px">
+      <div class="container">
+        <div class="row">
+          <div class="span12">
+            <ul class="pull-right">
+              <li style="font-size:20px"><a href="logout"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+            </ul>
+              <h1 class="namePlate"><strong>SPT MARKETPLACE</strong></h1></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="in-sub-nav" style="height:200px; background-color:#800080">
+      <div class="container">
+        <div class="row">
+          <div class="span12">
+            <ul style="text-align:center">
+              <li><a href="home"><span class="glyphicon glyphicon-search"></span><br><h3 style=" font-size:1.3em">Discover</h3></a></li>
+              <li><a href="dashboard"><span class="glyphicon glyphicon-text-width"></span><br><h3 style=" font-size:1.3em">Dashboard</h3></a></li>
+              <li><a href="upload"><span class="glyphicon glyphicon-plus"></span><br><h3 style=" font-size:1.3em">Upload</h3></a></li>
+              <li><a href="settings" class="active"><span class="glyphicon glyphicon-cog"></span><br><h3 style=" font-size:1.3em">Settings</h3></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page container">
+        <header class="page-header">
+            <h1 style="color:red; padding-left:10px;">Update your Details</h1>
+        </header>
+        
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-5 col-md-offset-3">
+                    <form class="form-horizontal" role="form" action="updateDetails" method="post">
+                      <label class="col-sm-5 control-label"><h2 style="color:red"><u>New Name</u></h2></label></br></br></br></br>
+					  <div class="form-group">
+                        <label for="inputFName" class="col-sm-5 control-label">First Name</label>
+						<div class="col-sm-10">
+                          <input type="text" class="form-control" id="newFName" placeholder="<old fname> put your useless $(user.fname)" name="newFName">
+                        </div>
+                      </div>
+					  <div class="form-group">
+                        <label for="inputMName" class="col-sm-5 control-label">Middle Name</label>
+						<div class="col-sm-10">
+                          <input type="text" class="form-control" id="newMName" placeholder="<old mname>" name="newMName">
+                        </div>
+                      </div>
+					  <div class="form-group">
+                        <label for="inputFName" class="col-sm-5 control-label">Last Name</label>
+						<div class="col-sm-10">
+                          <input type="text" class="form-control" id="newLName" placeholder="<old lname>" name="newLName">
+                        </div>
+                      </div>
+					  <hr style="height:1.5px;width:25em;border:1px solid #000;" class="col-md-5 col-md-offset-0">
+					  <label class="col-sm-13 control-label"><h2 style="color:red"><u>Change your personal <br>details</u></h2></label></br></br>
+					  <div class="form-group">
+                        <label for="inputAddress1" class="col-sm-5 control-label">New Address1</label>
+                        <div class="col-sm-10">
+                          <input type="text-long" class="form-control" id="newAddress2"  name="newAddress1">
+                        </div>
+                      </div>
+					  <div class="form-group">
+                        <label for="inputAddress2" class="col-sm-5 control-label">New Address2</label>
+                        <div class="col-sm-10">
+                          <input type="text-long" class="form-control" id="newAddress2"  name="newAddress2">
+                        </div>
+                      </div>
+					  <div class="form-group">
+                        <label for="inputAddress1" class="col-sm-5 control-label">blah1</label>
+                        <div class="col-sm-10">
+                          <input type="text-long" class="form-control" id="newAddress"  name="newAddress">
+                        </div>
+                      </div>
+					  <div class="form-group">
+                        <label for="inputAddress1" class="col-sm-5 control-label">blah2</label>
+                        <div class="col-sm-10">
+                          <input type="text-long" class="form-control" id="newAddress"  name="newAddress">
+                        </div>
+                      </div>
+					  <hr style="height:1.5px;width:25em;border:1px solid #000;" class="col-md-5 col-md-offset-0">
+					  <div class="form-group">
+					  <label class="col-sm-13 control-label"><h2 style="color:red"><u>Change your connection <br>settings</u></h2></label></br></br>
+                        <label for="inputEmail" class="col-sm-5 control-label">New Email</label>
+                        <div class="col-sm-10">
+                          <input type="email" class="form-control" id="newEmail" placeholder="<old email>" name="newEmail">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="inputPassword" class="col-sm-5 control-label">New Password</label>
+                        <div class="col-sm-10">
+                          <input type="password" class="form-control" id="newPassword" placeholder="at least 6 letters long" name="newPassword">
+                        </div>
+                      </div>
+					  </br>
+                      <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                          <button type="submit" class="btn btn-default">Submit Changes</button>
+                        </div>
+                      </div>
+                    </form>
+                </div>
+                <div class="col-md-4">
+				</div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+<footer>
+	<h4 style="font-weight:bold; text-align:center; text-color:black">This is a demo project</h4>
+	<p style="font-weight:bold; text-align:center; text-color:black">This was created by Sahil Gandhi, Tejash Desai and Pranav Murlidhar
+	<br>
+	This is merely a college project-work made under the guidance of Nikam Sir
+	</p>
+	
+</footer>
+</html>
