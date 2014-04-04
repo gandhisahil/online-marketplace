@@ -96,7 +96,7 @@ public class Register extends HttpServlet{
 			isUser = User.insert(user);
 			if(isUser){
 				try {
-					resp.sendRedirect("/login?re=reg");
+					resp.sendRedirect("login?re=reg");
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

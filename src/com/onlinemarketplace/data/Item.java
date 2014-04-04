@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import com.onlinemarketplace.database.Select;
+import com.onlinemarketplace.database.Update;
 
 public class Item {
 
@@ -67,10 +68,29 @@ public class Item {
 		this.category = category;
 	}
 	
-	// functions..
+	private int userId;
+	
+	public int getUserId() {
+		return userId;
+	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+	
+	// functions..	
+
+	public static boolean add(Item item){
+		int rows = 0;
+		String query= "INSERT INTO Item(name, price, addedOn, discount, category, useID) "
+				+ "VALUES('"+ item.getName() +"', "+ item.getPrice() +", '"+ item.getAddedOn() +"', " + item.getDiscount() + ", '"+ item.getCategory() +"', "+item.getUserId()+"); ";
+		rows = Update.execute(query);
+
+		return rows==1;
+	}
 	
 	// stock list from upload table..
-	public static List getStock(User user) {
+	public static List<Item> getStock(User user) {
 		
 		ResultSet rs = null;
 		List<Item> retval = null;

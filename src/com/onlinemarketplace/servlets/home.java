@@ -16,7 +16,7 @@ import com.onlinemarketplace.data.Transaction;
 import com.onlinemarketplace.data.User;
 
 @WebServlet("/home")
-public class home extends HttpServlet {
+public class Home extends HttpServlet {
 	@Override
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// check for session

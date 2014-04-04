@@ -134,7 +134,7 @@ public class User {
 	}
 
 	public static void _dummyinsert(){
-		String query = "insert into User(firstName, lastName ,email ,password ,phone ,addressLine1 ,addressLine2 ,area ,city, state, pincode)" 
+		String query = "insert into User(firstName, lastName ,email ,password ,phone ,addressLine1 ,addressLine2 ,area ,city, state, pincode) " 
 				+ "values('Dummy', 'boo', 'boo@email.com', 'passboo', '1234567890', 'add1', 'add2', 'area', 'city', 'state', 400000);";
 		System.out.println(Update.execute(query));
 	}

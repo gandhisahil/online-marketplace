@@ -20,8 +20,8 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-4 col-md-offset-4">
-					<%-- <span class="bg-danger">${messages.default}</span> --%>
-					<%-- <span class="bg-danger">${error.default}</span> --%>
+					<span class="bg-danger">${messages.default}</span>
+					<span class="bg-danger">${error.default}</span>
 					<form class="form-horizontal" role="form" action="login" method="post">
 						<div class="form-group">
 							<label for="inputEmail" class="col-sm-2 control-label">Email</label>

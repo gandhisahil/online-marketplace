@@ -26,14 +26,11 @@ public class Login extends HttpServlet {
 		messages.put("default", "hii");
 		
 		// Already signed in? Redirect to home..
-//		HttpSession session = req.getSession(false);
-//		if(session == null || session.getAttribute("login") == null){
-//			req.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(req, resp);
-//			// req.getRequestDispatcher("/WEB-INF/views/register.jsp").forward(req, resp);
-//		} else {
-//			resp.sendRedirect("/app/home");
-//		}
-		
+		HttpSession session = req.getSession(false);
+		if(session != null || session.getAttribute("login") != null){
+			resp.sendRedirect("home");
+			return;
+		}
 		// Check if redirect..
 //		String re = req.getParameter("re");
 //		if(re==null || re.trim().isEmpty()){
