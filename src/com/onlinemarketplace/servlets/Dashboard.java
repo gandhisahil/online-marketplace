@@ -2,7 +2,7 @@ package com.onlinemarketplace.servlets;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.List;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -32,9 +32,9 @@ public class Dashboard extends HttpServlet {
 			//			}
 
 			// get list of sold/bought/stock items..
-			List<Item> stock = null;
-			List<Transaction> purchase = null;
-			List<Transaction> sold = null;
+			ArrayList<Item> stock = null;
+			ArrayList<Transaction> purchase = null;
+			ArrayList<Transaction> sold = null;
 			try {
 				stock = Item.getStock(user);
 				purchase = Transaction.getPurchase(user);
@@ -45,7 +45,7 @@ public class Dashboard extends HttpServlet {
 			}
 			// set the jsp attributes!
 			req.setAttribute("stock", stock);
-			req.setAttribute("bought", purchase);
+			req.setAttribute("purchase", purchase);
 			req.setAttribute("sold", sold);
 
 			req.getRequestDispatcher("WEB-INF/views/dashboard.jsp").forward(req, resp);

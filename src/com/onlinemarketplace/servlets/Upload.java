@@ -34,13 +34,14 @@ public class Upload extends HttpServlet {
 		boolean isItem = false;
 		String name = req.getParameter("name");
 		int price = Integer.parseInt(req.getParameter("price"));
+		int quantity = Integer.parseInt(req.getParameter("quantity"));
 		// set date
 		java.util.Date utilDate = new java.util.Date();
 		long date = utilDate.getTime();
 		Date addedOn = new Date(date);
 		
 		int discount = Integer.parseInt(req.getParameter("discount"));
-		String category = req.getParameter("category");
+		int category = Integer.parseInt(req.getParameter("category"));
 		// set the user id from session
 		User user = (User) req.getSession().getAttribute("login");
 		
@@ -48,6 +49,7 @@ public class Upload extends HttpServlet {
 		item.setName(name);
 		item.setPrice(price);
 		item.setAddedOn(addedOn);
+		item.setQuantity(quantity);
 		item.setDiscount(discount);
 		item.setCategory(category);
 		item.setUserId(user.getUserID());

@@ -2,9 +2,11 @@ package com.onlinemarketplace.data;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.onlinemarketplace.database.Select;
+import com.onlinemarketplace.database.Update;
 
 public class Transaction {
 	
@@ -54,12 +56,12 @@ public class Transaction {
 	// funcions..
 
 	// list of bought items..
-	public static List getPurchase(User user) throws SQLException {
+	public static ArrayList<Transaction> getPurchase(User user) throws SQLException {
 		ResultSet rs = null;
-		List<Transaction> retval = null;
+		ArrayList<Transaction> retval = new ArrayList<Transaction>();
 		String query = "SELECT * "
 				+ "FROM Transaction "
-				+ "WHERE buyerID="+user.getUserID()+";" ;
+				+ "WHERE buyerID="+user.getUserID()+";";
 		try {
 			rs = Select.execute(query);
 			while(rs.next()){
@@ -80,12 +82,12 @@ public class Transaction {
 	}
 
 	// list of sold items..
-	public static List getSold(User user) throws SQLException{		
+	public static ArrayList<Transaction> getSold(User user) throws SQLException{		
 		ResultSet rs = null;
-		List<Transaction> retval = null;
+		ArrayList<Transaction> retval = new ArrayList<Transaction>();
 		String query = "SELECT * "
 				+ "FROM Transaction "
-				+ "WHERE sellerID="+user.getUserID()+";" ;
+				+ "WHERE sellerID="+user.getUserID()+";";
 		try {
 			rs = Select.execute(query);
 			while(rs.next()){
@@ -102,6 +104,24 @@ public class Transaction {
 			e.printStackTrace();
 		}
 		return retval;
+	}
+	
+	// make transaction
+	public static boolean make(Transaction tx, int diff){
+		int rows =0;
+		String query = "INSERT INTO Transaction(buyerID, sellerID, itemID, quantity, amount) "
+				+ "values("+tx.getBuyerID()+", "+tx.getSellerID()+","+tx.getItemID()+", "+tx.getQuantity()+", "+tx.getAmount()+"); ";
+		rows = Update.execute(query);
+		// adjust the quantity in the database
+		// minus quantity from sellers stock
+		if(rows==1){
+			rows = 0; // reset "rows" to check for updation
+			query = "UPDATE Item "
+					+ "SET quantity="+diff+" "
+					+"WHERE itemID="+tx.getItemID()+";";
+			rows = Update.execute(query);
+		}
+		return rows==1;
 	}
 
 }

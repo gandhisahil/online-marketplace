@@ -70,11 +70,11 @@
 				<div class="col-md-0 col-md-offset-0">
 				<label class="col-sm-10 control-label" style="color:red"><h3>Or select one of the following categories to browse</h3></label>
 				</div>
-				 <div id='mobiles'><a href="#"><h4 style="font-weight:bold">Mobiles</h4></a></div>
-				 <div id='laptops'><a href="#"><h4 style="font-weight:bold">Laptops</h4></a></div>
-				 <div id='automobiles'><a href="#"><h4 style="font-weight:bold">Automobiles</h4></a></div>
-				 <div id='homeTheatres'><a href="#"><h4 style="font-weight:bold">Home Theatres</h4></a></div>
-				 <div id='softwares'><a href="#"><h4 style="font-weight:bold">Softwares</h4></a></div>
+				 <div id='mobiles'><a href="browse?category=1"><h4 style="font-weight:bold">Mobiles</h4></a></div>
+				 <div id='laptops'><a href="browse?category=3"><h4 style="font-weight:bold">Laptops</h4></a></div>
+				 <div id='automobiles'><a href="browse?category=2"><h4 style="font-weight:bold">Automobiles</h4></a></div>
+				 <div id='homeTheatres'><a href="browse?category=4"><h4 style="font-weight:bold">Home Theatres</h4></a></div>
+				 <div id='softwares'><a href="browse?category=5"><h4 style="font-weight:bold">Softwares</h4></a></div>
 				</div>	
 					</div>
 				</div>

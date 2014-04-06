@@ -20,7 +20,7 @@
         
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-4 col-md-offset-4">
+                <div class="col-md-6 col-md-offset-3">
                     <form class="form-horizontal" role="form" action="register" method="post">
                       <h4>Personal Details..</h4>
                       <div class="form-group">
@@ -103,7 +103,7 @@
                       </div>
                     </form>
                 </div>
-                <div class="col-md-4"><!-- dummy --></div>
+                <div class="col-md-3"><!-- dummy --></div>
             </div>
         </div>
     </div>
