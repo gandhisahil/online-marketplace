@@ -48,7 +48,7 @@
   <div class="page">
       <div class="page-container">
 		<div class="container">
-			<div class="row">
+			<!-- <div class="row">
 				<div class="span10">
 					<div class="col-md-0 col-md-offset-0">
 						<label class="col-sm-5 control-label" style="color:red"><h3>Search From All Items</h3></label>
@@ -60,7 +60,7 @@
                         </div>
 				</div>
 			</div>
-			</div>
+			</div> -->
 			<br>
 			<br>
 			<br>
@@ -68,7 +68,7 @@
 				<div class="span12"> 
 				<div id='container'>
 				<div class="col-md-0 col-md-offset-0">
-				<label class="col-sm-10 control-label" style="color:red"><h3>Or select one of the following categories to browse</h3></label>
+				<label class="col-sm-10 control-label" style="color:red"><h3>Select one of the following categories to browse</h3></label>
 				</div>
 				 <div id='mobiles'><a href="browse?category=1"><h4 style="font-weight:bold">Mobiles</h4></a></div>
 				 <div id='laptops'><a href="browse?category=3"><h4 style="font-weight:bold">Laptops</h4></a></div>
